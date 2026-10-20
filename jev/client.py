@@ -32,7 +32,7 @@ except ImportError:  # python-dotenv is optional
     pass
 
 DEFAULT_BASE_URL = "https://openrouter.ai/api"
-DEFAULT_MODEL = "typesafe/jev-latest"
+DEFAULT_MODEL = "typesafe/jev-1.14"
 
 # OpenRouter exposes Jev on two equivalent endpoints (relative to the base URL):
 #   /v1/systemone     - System One endpoint, compatible with the TypeSafe SDKs
@@ -219,7 +219,14 @@ class JevClient:
         url = self.base_url + self.path
         for attempt in range(self.max_retries + 1):
             start = time.perf_counter()
-            resp = self.session.post(url, json=payload, timeout=self.timeout)
+            try:
+                resp = self.session.post(url, json=payload, timeout=self.timeout)
+            except (requests.Timeout, requests.ConnectionError) as e:
+                # Network failures are retryable too; surface them as JevError once retries run out.
+                if attempt == self.max_retries:
+                    raise JevError(0, f"{type(e).__name__}: {e}") from e
+                time.sleep(0.5 * 2**attempt)
+                continue
             latency_ms = (time.perf_counter() - start) * 1000
             retryable = resp.status_code == 429 or resp.status_code >= 500
             if resp.ok or not retryable or attempt == self.max_retries:
