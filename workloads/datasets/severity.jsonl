@@ -1,0 +1,8 @@
+{"text": "Typo on the pricing page.", "label": 0}
+{"text": "Dark mode colours look slightly off.", "label": 0}
+{"text": "Export to PDF is slow for large reports.", "label": 1}
+{"text": "Search occasionally returns stale results.", "label": 1}
+{"text": "Users in one region can't upload files; workaround exists.", "label": 2}
+{"text": "Login fails for ~5% of users, retry usually works.", "label": 2}
+{"text": "Checkout is down for all customers.", "label": 3}
+{"text": "Customer data is visible to other tenants.", "label": 3}

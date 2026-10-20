@@ -1,0 +1,20 @@
+{"text": "I was charged twice for my October invoice.", "label": "billing"}
+{"text": "Refund hasn't shown up on my card after 10 days.", "label": "billing"}
+{"text": "How do I change the card on file?", "label": "billing"}
+{"text": "Why did my plan price go up without notice?", "label": "billing"}
+{"text": "The mobile app crashes as soon as I open settings.", "label": "technical"}
+{"text": "Webhook deliveries are failing with a TLS error.", "label": "technical"}
+{"text": "Dashboard has been stuck on 'loading' all morning.", "label": "technical"}
+{"text": "API returns 429 even though we're under our limit.", "label": "technical"}
+{"text": "I forgot my password and the reset link is expired.", "label": "account"}
+{"text": "Please delete my account and all my data.", "label": "account"}
+{"text": "How do I change the email address I log in with?", "label": "account"}
+{"text": "I have two accounts, can you merge them?", "label": "account"}
+{"text": "We'd like a quote for 200 seats on the enterprise plan.", "label": "sales"}
+{"text": "Do you offer discounts for NGOs?", "label": "sales"}
+{"text": "Can I book a demo for my team next week?", "label": "sales"}
+{"text": "Is there an on-prem version we could buy?", "label": "sales"}
+{"text": "Do you have any job openings for interns?", "label": "other"}
+{"text": "Loved the webinar yesterday, thanks!", "label": "other"}
+{"text": "Where is your office in Kochi located?", "label": "other"}
+{"text": "Can you sponsor our college hackathon?", "label": "other"}

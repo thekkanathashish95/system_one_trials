@@ -1,0 +1,20 @@
+name: offline-tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt openrouter
+      - run: pytest -q
+      - name: Dry-run every template
+        run: |
+          for f in templates/0[1-6]*.py; do python "$f" --dry-run > /dev/null; done
+          python workloads/run_workloads.py --dry-run > /dev/null
