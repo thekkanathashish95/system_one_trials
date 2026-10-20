@@ -6,7 +6,7 @@ client. Configure via env (see .env.example):
 
     TYPESAFE_API_KEY=<your OpenRouter key>
     TYPESAFE_BASE_URL=https://openrouter.ai/api      # SDK appends /v1/systemone
-    TYPESAFE_DEFAULT_MODEL=typesafe/jev-latest
+    TYPESAFE_DEFAULT_MODEL=typesafe/jev-1.14
 
     pip install typesafe-sdk
     python templates/07_official_typesafe_sdk.py
